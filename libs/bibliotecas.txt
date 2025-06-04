@@ -1,0 +1,3 @@
+Aqui ficará registrado quais bibliotecas estão sendo usadas no projeto:
+
+-Plplot para gerar gráficos
