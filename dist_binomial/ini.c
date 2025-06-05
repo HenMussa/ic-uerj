@@ -4,9 +4,9 @@
 
 // função para distribuir as partículas e armazenar os dados obtidos. 
 void distribuicao(int N){
-	//FILE *ftp;
-	//ftp = fopen("dados.csv", "w+");
-	//fprintf(ftp, "Partícula,Esquerda,Direita,PorcentagemEsquerda,PorcentagemDireita\n");
+	FILE *ftp;
+	ftp = fopen("dados.csv", "w+");
+	fprintf(ftp, "Partícula,Esquerda,Direita,PorcentagemEsquerda,PorcentagemDireita\n");
 
 	srand(time(NULL));
 	int esquerda = 0;
@@ -26,12 +26,10 @@ void distribuicao(int N){
 		//Porcentagem de distribuição
 		double percEs = ((double)esquerda*100)/(double)i;
 		double percDi = ((double)direita*100)/(double)i;
-		printf("\nDistribuição: %f%% à esquerda e %f%% à direita\n", percEs, percDi);
+		
+		fprintf(ftp, "%i,%i,%i,%f%%,%f%%\n", i, esquerda, direita, percEs, percDi);
 	}
-
-
-	printf("\nEsquerda: %i\n", esquerda);
-	printf("Direita: %i\n", direita);
+	fclose(ftp);
 }
 
 void input(){
