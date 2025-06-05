@@ -6,7 +6,7 @@
 void distribuicao(int N){
 	FILE *ftp;
 	ftp = fopen("dados.csv", "w+");
-	fprintf(ftp, "Partícula,Esquerda,Direita,PorcentagemEsquerda,PorcentagemDireita\n");
+	fprintf(ftp, "Partícula,Esquerda,Direita,Porcentagem_Esquerda,Porcentagem_Direita\n");
 
 	srand(time(NULL));
 	int esquerda = 0;
