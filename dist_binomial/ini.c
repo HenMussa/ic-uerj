@@ -5,7 +5,7 @@
 // função para distribuir as partículas e armazenar os dados obtidos. 
 void distribuicao(int N){
 	FILE *ftp;
-	ftp = fopen("dados.csv", "w+");
+	ftp = fopen("dist_binomial/dados.csv", "w+");
 	fprintf(ftp, "Partícula,Esquerda,Direita,Porcentagem_Esquerda,Porcentagem_Direita\n");
 
 	srand(time(NULL));
@@ -30,6 +30,8 @@ void distribuicao(int N){
 		fprintf(ftp, "%i,%i,%i,%f%%,%f%%\n", i, esquerda, direita, percEs, percDi);
 	}
 	fclose(ftp);
+
+	puts("\nArquivo com os dados criado com sucesso\n");
 }
 
 void input(){
